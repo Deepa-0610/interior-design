@@ -1,0 +1,17 @@
+{
+  "name": "interior-design-planner",
+  "version": "1.0.0",
+  "description": "Virtual Interior Design Planner",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.0",
+    "nodemailer": "^7.0.6"
+  }
+}

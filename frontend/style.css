@@ -1,0 +1,451 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f3ef;
+    color: #333;
+}
+
+
+/*  HEADER  */
+
+header {
+    background: #2f3e35;
+    color: white;
+    padding: 18px 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    opacity: 0.7;
+}
+
+
+/*  HERO  */
+
+.hero {
+    text-align: center;
+    padding: 50px 20px 30px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+    color: #2f3e35;
+}
+
+.hero p {
+    color: #666;
+    font-size: 17px;
+}
+
+
+/*  PLANNER  */
+
+.planner-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+
+    padding: 20px;
+}
+
+.settings-card {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.settings-card h2 {
+    margin-bottom: 20px;
+    color: #2f3e35;
+}
+
+
+/*  INPUTS  */
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 15px;
+    background: white;
+}
+
+select:focus,
+input:focus {
+    outline: none;
+    border-color: #2f3e35;
+}
+
+
+/*  BUTTONS  */
+
+button {
+    cursor: pointer;
+}
+
+.primary-btn {
+    width: 100%;
+    margin-top: 20px;
+
+    padding: 13px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #2f3e35;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.primary-btn:hover {
+    background: #43594c;
+}
+
+.new-btn {
+    padding: 10px 18px;
+
+    border: 1px solid #2f3e35;
+    border-radius: 8px;
+
+    background: white;
+    color: #2f3e35;
+}
+
+.save-btn {
+    width: 100%;
+
+    margin-top: 25px;
+    padding: 15px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #2f3e35;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.back-btn {
+    margin: 30px;
+
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #2f3e35;
+    color: white;
+}
+
+
+/*  ROOM CARD  */
+
+.room-card {
+    max-width: 1100px;
+    margin: 30px auto 60px;
+
+    background: white;
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.room-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.room-header h2 {
+    color: #2f3e35;
+}
+
+.room-header p {
+    margin-top: 5px;
+    color: #777;
+}
+
+
+/*  FURNITURE  */
+
+.furniture-list {
+    margin-top: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.furniture-item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    padding: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.furniture-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.furniture-icon {
+    font-size: 30px;
+}
+
+.furniture-name {
+    font-weight: bold;
+}
+
+.furniture-price {
+    color: #666;
+    margin-top: 4px;
+}
+
+.remove-btn {
+    border: none;
+    background: #eee;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    font-size: 18px;
+}
+
+.remove-btn:hover {
+    background: #ddd;
+}
+
+.empty-message {
+    color: #888;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/*  BUDGET  */
+
+.budget-section {
+    margin-top: 30px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.budget-section div {
+    background: #f5f3ef;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+.budget-section span {
+    display: block;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.budget-section strong {
+    font-size: 20px;
+}
+
+
+/*  MY DESIGNS  */
+
+.hidden {
+    display: none;
+}
+
+#myDesignsPage {
+    padding: 40px;
+}
+
+.page-title {
+    max-width: 1100px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-title .primary-btn {
+    width: auto;
+    margin: 0;
+}
+
+.design-grid {
+    max-width: 1100px;
+    margin: 30px auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.design-card {
+    background: white;
+    padding: 22px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.design-card h3 {
+    color: #2f3e35;
+    margin-bottom: 8px;
+}
+
+.design-card p {
+    margin: 6px 0;
+    color: #666;
+}
+
+.design-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.view-btn,
+.delete-btn {
+    flex: 1;
+
+    padding: 10px;
+
+    border-radius: 7px;
+    border: none;
+}
+
+.view-btn {
+    background: #2f3e35;
+    color: white;
+}
+
+.delete-btn {
+    background: #eee;
+    color: #333;
+}
+
+
+/*  VIEW PAGE  */
+
+#viewPage {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.view-card {
+    background: white;
+    padding: 30px;
+
+    border-radius: 14px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.view-card h1 {
+    color: #2f3e35;
+    margin-bottom: 10px;
+}
+
+.view-furniture {
+    margin-top: 25px;
+}
+
+.view-furniture-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+
+/*  RESPONSIVE  */
+
+@media (max-width: 800px) {
+
+    .planner-container {
+        grid-template-columns: 1fr;
+    }
+
+    .furniture-list {
+        grid-template-columns: 1fr;
+    }
+
+    .design-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .budget-section {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 18px 20px;
+    }
+
+}

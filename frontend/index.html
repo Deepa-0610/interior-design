@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Interior Design Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Interior Planner</div>
+
+        <nav>
+            <button onclick="showHome()">Home</button>
+            <button onclick="showDesigns()">My Designs</button>
+            <button onclick="logout()">Logout</button>
+        </nav>
+    </header>
+
+
+    <!--  HOME  -->
+
+    <div id="homePage">
+
+        <section class="hero">
+            <h1>Design Your Dream Room</h1>
+            <p>Create and save your own virtual interior designs</p>
+        </section>
+
+
+        <div class="planner-container">
+
+            <!-- ROOM SETTINGS -->
+
+            <div class="settings-card">
+
+                <h2>Room Details</h2>
+
+                <label for="room">Room Type</label>
+
+                <select id="room" onchange="updateFurniture()">
+                    <option value="Bedroom">Bedroom</option>
+                    <option value="Living Room">Living Room</option>
+                    <option value="Kitchen">Kitchen</option>
+                    <option value="Bathroom">Bathroom</option>
+                    <option value="Dining Room">Dining Room</option>
+                    <option value="Study Room">Study Room</option>
+                </select>
+
+
+                <label for="style">Room Style</label>
+
+                <select id="style">
+                    <option>Modern</option>
+                    <option>Minimal</option>
+                    <option>Classic</option>
+                    <option>Luxury</option>
+                    <option>Traditional</option>
+                </select>
+
+
+                <label for="budget">Budget</label>
+
+                <input type="number" id="budget" placeholder="Enter your budget" min="1" oninput="updateBudget()">
+
+
+                <button class="primary-btn" onclick="updateRoom()">
+                    Update Room
+                </button>
+
+            </div>
+
+
+            <!-- FURNITURE -->
+
+            <div class="settings-card">
+
+                <h2>Add Furniture</h2>
+
+                <label for="furniture">Furniture</label>
+
+                <select id="furniture"></select>
+
+
+                <label for="quantity">Quantity</label>
+
+                <select id="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+
+                <button class="primary-btn" onclick="addFurniture()">
+                    Add Furniture
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!--  CURRENT ROOM  -->
+
+        <div class="room-card">
+
+            <div class="room-header">
+
+                <div>
+                    <h2 id="currentRoom">Bedroom</h2>
+                    <p id="currentStyle">Modern</p>
+                </div>
+
+                <button class="new-btn" onclick="newRoom()">
+                    New Room
+                </button>
+
+            </div>
+
+
+            <div id="furnitureList" class="furniture-list">
+                <p class="empty-message">
+                    No furniture added yet.
+                </p>
+            </div>
+
+
+            <div class="budget-section">
+
+                <div>
+                    <span>Budget</span>
+                    <strong id="budgetAmount">₹0</strong>
+                </div>
+
+                <div>
+                    <span>Total Cost</span>
+                    <strong id="totalAmount">₹0</strong>
+                </div>
+
+                <div>
+                    <span>Remaining</span>
+                    <strong id="remainingAmount">₹0</strong>
+                </div>
+
+            </div>
+
+
+            <button class="save-btn" onclick="saveDesign()">
+                Save Design
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!--  MY DESIGNS  -->
+
+    <div id="myDesignsPage" class="hidden">
+
+        <div class="page-title">
+
+            <h1>My Designs</h1>
+
+            <button class="primary-btn" onclick="showHome()">
+                Create New Design
+            </button>
+
+        </div>
+
+
+        <div id="designList" class="design-grid"></div>
+
+    </div>
+
+
+    <!--  VIEW DESIGN  -->
+
+    <div id="viewPage" class="hidden">
+
+        <button class="back-btn" onclick="showDesigns()">
+            ← Back to My Designs
+        </button>
+
+
+        <div id="viewDesign" class="view-card"></div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
