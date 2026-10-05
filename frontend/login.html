@@ -2,107 +2,159 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Interior Planner Login</title>
+    <title>Interior Planner</title>
 
     <link rel="stylesheet" href="login.css">
-
 </head>
 
 <body>
 
-<div class="box">
+    <!-- ================= WELCOME ================= -->
 
-    <div id="loginBox">
+    <section class="welcome">
 
-        <h1>Interior Planner</h1>
+        <div class="welcome-content">
 
-        <h2>Login</h2>
+            <p class="small-title">VIRTUAL INTERIOR DESIGN PLANNER</p>
 
-        <form id="loginForm">
+            <h1>
+                Design Your
+                <span>Dream Space</span>
+            </h1>
 
-            <input
-                type="email"
-                id="loginEmail"
-                placeholder="Email"
-                required
-            >
+            <p class="description">
+                Create beautiful virtual rooms by choosing
+                furniture, styles and budgets — all in one place.
+            </p>
 
-            <input
-                type="password"
-                id="loginPassword"
-                placeholder="Password"
-                required
-            >
+            <div class="features">
 
-            <button type="submit">
-                Login
+                <div>
+                    <span>🏠</span>
+                    <p>Choose Your Room</p>
+                </div>
+
+                <div>
+                    <span>🛋️</span>
+                    <p>Add Furniture</p>
+                </div>
+
+                <div>
+                    <span>💰</span>
+                    <p>Plan Your Budget</p>
+                </div>
+
+            </div>
+
+            <button onclick="showSignup()">
+                Create Your Account
             </button>
 
-        </form>
+        </div>
 
-        <p id="loginMessage"></p>
-
-        <p>
-            Don't have an account?
-            <span onclick="showSignup()">Sign Up</span>
-        </p>
-
-    </div>
+    </section>
 
 
-    <div id="signupBox" class="hidden">
+    <!-- ================= LOGIN ================= -->
 
-        <h1>Interior Planner</h1>
+    <section class="auth-section">
 
-        <h2>Create Account</h2>
+        <div class="box" id="loginBox">
 
-        <form id="signupForm">
+            <h2>Welcome Back</h2>
 
-            <input
-                type="text"
-                id="signupName"
-                placeholder="Name"
-                required
-            >
+            <p class="auth-text">
+                Login to continue designing your space.
+            </p>
 
-            <input
-                type="email"
-                id="signupEmail"
-                placeholder="Email"
-                required
-            >
+            <form id="loginForm">
 
-            <input
-                type="password"
-                id="signupPassword"
-                placeholder="Password"
-                required
-            >
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Email"
+                    required
+                >
 
-            <button type="submit">
-                Sign Up
-            </button>
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Password"
+                    required
+                >
 
-        </form>
+                <button type="submit">
+                    Login
+                </button>
 
-        <p id="signupMessage"></p>
+            </form>
 
-        <p>
-            Already have an account?
-            <span onclick="showLogin()">Login</span>
-        </p>
+            <p id="loginMessage"></p>
 
-    </div>
+            <p class="switch">
+                Don't have an account?
+                <span onclick="showSignup()">Register</span>
+            </p>
 
-</div>
+        </div>
 
-<script src="login.js"></script>
+
+        <!-- ================= SIGNUP ================= -->
+
+        <div class="box hidden" id="signupBox">
+
+            <h2>Create Account</h2>
+
+            <p class="auth-text">
+                Start creating your virtual room today.
+            </p>
+
+            <form id="signupForm">
+
+                <input
+                    type="text"
+                    id="signupName"
+                    placeholder="Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="signupEmail"
+                    placeholder="Email"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="signupPassword"
+                    placeholder="Password (minimum 6 characters)"
+                    required
+                >
+
+                <button type="submit">
+                    Register
+                </button>
+
+            </form>
+
+            <p id="signupMessage"></p>
+
+            <p class="switch">
+                Already have an account?
+                <span onclick="showLogin()">Login</span>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <script src="login.js"></script>
 
 </body>
+
 </html>

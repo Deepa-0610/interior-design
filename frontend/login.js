@@ -1,7 +1,7 @@
 const API = "http://localhost:3000/api";
 
 
-// LOGIN
+// ================= LOGIN =================
 
 document.getElementById("loginForm")
 .addEventListener("submit", async function(e) {
@@ -15,44 +15,53 @@ document.getElementById("loginForm")
         document.getElementById("loginPassword").value;
 
 
-    const res = await fetch(API + "/login", {
+    try {
 
-        method: "POST",
+        const res = await fetch(API + "/login", {
 
-        headers: {
-            "Content-Type": "application/json"
-        },
+            method: "POST",
 
-        body: JSON.stringify({
-            email,
-            password
-        })
+            headers: {
+                "Content-Type": "application/json"
+            },
 
-    });
+            body: JSON.stringify({
+                email,
+                password
+            })
 
-    const data = await res.json();
+        });
+
+        const data = await res.json();
 
 
-    if (res.ok) {
+        if (res.ok) {
 
-        localStorage.setItem(
-            "interiorUser",
-            JSON.stringify(data.user)
-        );
+            localStorage.setItem(
+                "interiorUser",
+                JSON.stringify(data.user)
+            );
 
-        window.location.href = "index.html";
+            window.location.href = "index.html";
 
-    } else {
+        } else {
+
+            document.getElementById("loginMessage")
+                .textContent = data.message;
+
+        }
+
+    } catch (error) {
 
         document.getElementById("loginMessage")
-            .textContent = data.message;
+            .textContent = "Server not connected.";
 
     }
 
 });
 
 
-// SIGNUP
+// ================= SIGNUP =================
 
 document.getElementById("signupForm")
 .addEventListener("submit", async function(e) {
@@ -69,31 +78,50 @@ document.getElementById("signupForm")
         document.getElementById("signupPassword").value;
 
 
-    const res = await fetch(API + "/signup", {
+    try {
 
-        method: "POST",
+        const res = await fetch(API + "/signup", {
 
-        headers: {
-            "Content-Type": "application/json"
-        },
+            method: "POST",
 
-        body: JSON.stringify({
-            name,
-            email,
-            password
-        })
+            headers: {
+                "Content-Type": "application/json"
+            },
 
-    });
+            body: JSON.stringify({
+                name,
+                email,
+                password
+            })
 
-    const data = await res.json();
+        });
 
-    document.getElementById("signupMessage")
-        .textContent = data.message;
+        const data = await res.json();
+
+
+        document.getElementById("signupMessage")
+            .textContent = data.message;
+
+
+        if (res.ok) {
+
+            document.getElementById("signupForm").reset();
+
+            setTimeout(showLogin, 1500);
+
+        }
+
+    } catch (error) {
+
+        document.getElementById("signupMessage")
+            .textContent = "Server not connected.";
+
+    }
 
 });
 
 
-// SHOW SIGNUP
+// ================= SHOW SIGNUP =================
 
 function showSignup() {
 
@@ -103,10 +131,15 @@ function showSignup() {
     document.getElementById("signupBox")
         .classList.remove("hidden");
 
+    document.getElementById("signupBox")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
 }
 
 
-// SHOW LOGIN
+// ================= SHOW LOGIN =================
 
 function showLogin() {
 
@@ -115,5 +148,10 @@ function showLogin() {
 
     document.getElementById("loginBox")
         .classList.remove("hidden");
+
+    document.getElementById("loginBox")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
 
 }

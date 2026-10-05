@@ -28,10 +28,10 @@ const Design = mongoose.model("Design", designSchema);
 //  EMAIL  
 const transporter = nodemailer.createTransport({
     service: "gmail",
-   auth: {
-    user: "YOUR_GMAIL@gmail.com",
-    pass: "YOUR_16_DIGIT_APP_PASSWORD"
-}
+    auth: {
+        user: "deepalinges06@gmail.com",
+        pass: "dbyr fgal fowv mduh"
+    }
 });
 //  SIGNUP  
 router.post("/signup", async (req, res) => {

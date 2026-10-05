@@ -1,74 +1,274 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    font-family: Arial;
-    background: #eee8df;
+    font-family: Arial, sans-serif;
+    background: #f5f3ef;
+    color: #333;
+}
+
+
+/* ================= WELCOME ================= */
+
+.welcome {
+    min-height: 75vh;
+
+    background: #2f3e35;
+    color: white;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    min-height: 100vh;
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+.welcome-content {
+    max-width: 750px;
+}
+
+.small-title {
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    opacity: 0.8;
+}
+
+.welcome h1 {
+    font-size: 52px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.welcome h1 span {
+    color: #d8c8a9;
+}
+
+.description {
+    max-width: 600px;
+    margin: auto;
+
+    font-size: 18px;
+    line-height: 1.6;
+
+    color: #e5e5e5;
+}
+
+
+/* ================= FEATURES ================= */
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    margin: 35px 0;
+}
+
+.features div {
+    width: 170px;
+
+    padding: 18px;
+
+    background: rgba(255,255,255,0.08);
+
+    border-radius: 12px;
+}
+
+.features span {
+    font-size: 28px;
+}
+
+.features p {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+
+/* ================= BUTTON ================= */
+
+.welcome button {
+    padding: 14px 28px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #d8c8a9;
+    color: #2f3e35;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.welcome button:hover {
+    opacity: 0.9;
+}
+
+
+/* ================= AUTH ================= */
+
+.auth-section {
+    min-height: 500px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
 }
 
 .box {
-    width: 350px;
+    width: 380px;
+
     padding: 35px;
 
     background: white;
+
     border-radius: 15px;
 
-    box-shadow: 0 5px 20px #bbb;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
-h1,
-h2 {
+.box h2 {
     text-align: center;
-    color: #30443b;
+    color: #2f3e35;
+
+    font-size: 28px;
+    margin-bottom: 8px;
 }
+
+.auth-text {
+    text-align: center;
+    color: #777;
+
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+
+/* ================= INPUT ================= */
 
 input {
     width: 100%;
-    padding: 12px;
-    margin: 8px 0;
+
+    padding: 13px;
+
+    margin: 7px 0;
 
     border: 1px solid #ccc;
-    border-radius: 6px;
+    border-radius: 7px;
+
+    font-size: 14px;
 }
 
-button {
-    width: 100%;
-    padding: 12px;
+input:focus {
+    outline: none;
+    border-color: #2f3e35;
+}
 
-    margin-top: 10px;
+
+/* ================= AUTH BUTTON ================= */
+
+.box button {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-top: 12px;
 
     border: none;
-    border-radius: 6px;
+    border-radius: 7px;
 
-    background: #30443b;
+    background: #2f3e35;
     color: white;
 
-    cursor: pointer;
-}
-
-p {
-    text-align: center;
-}
-
-span {
-    color: #30443b;
+    font-size: 15px;
     font-weight: bold;
+
     cursor: pointer;
 }
+
+.box button:hover {
+    background: #43594c;
+}
+
+
+/* ================= MESSAGES ================= */
+
+#loginMessage,
+#signupMessage {
+    text-align: center;
+
+    margin-top: 12px;
+
+    color: #b33;
+    font-size: 14px;
+}
+
+
+/* ================= SWITCH ================= */
+
+.switch {
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #666;
+    font-size: 14px;
+}
+
+.switch span {
+    color: #2f3e35;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* ================= HIDDEN ================= */
 
 .hidden {
     display: none;
 }
 
-#loginMessage,
-#signupMessage {
-    color: #b33;
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .welcome {
+        min-height: auto;
+        padding: 50px 20px;
+    }
+
+    .welcome h1 {
+        font-size: 38px;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .features div {
+        width: 250px;
+    }
+
+    .box {
+        width: 100%;
+        max-width: 380px;
+    }
+
 }
