@@ -259,11 +259,11 @@ router.delete("/designs/:id", async (req, res) => {
 // EXTERNAL ROUTES
 
 router.get("/instagram", (req, res) => {
-    res.redirect("https://www.instagram.com/");
+    res.redirect("https://www.instagram.com");
 });
 
 router.get("/youtube", (req, res) => {
-    res.redirect("https://www.youtube.com/");
+    res.redirect("https://www.youtube.com");
 });
 //  ROUTER  
 app.use("/api", router);
