@@ -176,7 +176,36 @@ input:focus {
     outline: none;
     border-color: #2f3e35;
 }
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
 
+.social-links a {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+    font-size: 22px;
+
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+}
 
 /* ================= AUTH BUTTON ================= */
 
@@ -270,35 +299,6 @@ input:focus {
         width: 100%;
         max-width: 380px;
     }
-    .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 25px;
-}
-
-.social-links a {
-    width: 45px;
-    height: 45px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-
-    border-radius: 50%;
-
-    text-decoration: none;
-    font-size: 22px;
-
-    transition: 0.3s;
-}
-
-.social-links a:hover {
-    transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.2);
-}
+    
 
 }
