@@ -1,12 +1,15 @@
+
 const mongoose = require("mongoose");
+
 async function connectDB() {
-    try {
-        await mongoose.connect(
-            "mongodb://127.0.0.1:27017/interior_design2"
-        );
-        console.log("MongoDB connected");
-    } catch (error) {
-        console.log("MongoDB error:", error.message);
+    const uri = process.env.MONGODB_URI;
+
+    if (!uri) {
+        throw new Error("MONGODB_URI is not configured");
     }
+
+    await mongoose.connect(uri);
+    console.log("MongoDB connected");
 }
+
 module.exports = connectDB;
